@@ -13,9 +13,7 @@ function Bunyan2Loggly (logglyConfig, buffer) {
 	this.buffer = buffer || 1;
 	this._buffer = [];
 
-	// add the https tag by default, just to make the loggly source setup work as expect
 	this.logglyConfig.tags = this.logglyConfig.tags || [];
-	this.logglyConfig.tags.push('https');
 
 	// create the client
 	this.client = loggly.createClient(logglyConfig);
