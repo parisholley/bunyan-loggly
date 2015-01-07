@@ -8,6 +8,9 @@ function Bunyan2Loggly (logglyConfig, buffer) {
 
 	// define the log as being json (because bunyan is a json logger)
 	this.logglyConfig.json = true;
+	
+	// loggly isn't liking the headers for some odd reason
+	this.logglyConfig.useTagHeader = this.logglyConfig.useTagHeader || false;
 
 	// define the buffer count, unless one has already been defined
 	this.buffer = buffer || 1;
